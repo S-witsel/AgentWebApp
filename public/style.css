@@ -1,0 +1,60 @@
+/* Quiz-specific styles */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth transitions */
+button {
+    transition: all 0.3s ease;
+}
+
+#optionsContainer button:active {
+    transform: scale(0.98);
+}
+
+/* Disabled button styles */
+#optionsContainer button:disabled,
+#movieList button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+#optionsContainer button:disabled:hover,
+#movieList button:disabled:hover {
+    background-color: #d97706; /* Keep original color but no hover effect */
+    transform: none !important;
+}
+
+/* Animation for option buttons */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#optionsContainer button {
+    animation: slideIn 0.3s ease;
+}
+
+/* Custom scrollbar for question text */
+#questionText {
+    max-height: 120px;
+    overflow-y: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    #movieList {
+        grid-template-columns: 1fr;
+    }
+}

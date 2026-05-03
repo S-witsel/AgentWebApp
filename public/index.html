@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>James Bond Quiz</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gradient-to-br from-gray-900 via-gray-800 to-black min-h-screen">
+    <div class="min-h-screen flex items-center justify-center p-4">
+        <!-- Movie Selection Screen -->
+        <div id="movieSelectScreen" class="w-full max-w-2xl">
+            <div class="bg-gray-800 rounded-lg shadow-2xl p-8 border border-yellow-600">
+                <h1 class="text-4xl font-bold mb-2 text-yellow-400 text-center">🎬 James Bond Quiz</h1>
+                <p class="text-gray-400 text-center mb-8">Choose a movie to test your knowledge</p>
+                
+                <div id="movieList" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+            </div>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quizScreen" class="w-full max-w-2xl hidden">
+            <div class="bg-gray-800 rounded-lg shadow-2xl p-8 border border-yellow-600">
+                <!-- Header -->
+                <div class="flex justify-between items-center mb-6">
+                    <h2 id="movieTitle" class="text-2xl font-bold text-yellow-400"></h2>
+                    <div class="text-right">
+                        <p class="text-gray-400 text-sm">Question <span id="questionNumber">1</span>/5</p>
+                        <p class="text-2xl font-bold text-yellow-400">Score: <span id="score">0</span></p>
+                    </div>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="w-full bg-gray-700 rounded-full h-2 mb-6">
+                    <div id="progressBar" class="bg-yellow-600 h-2 rounded-full" style="width: 0%"></div>
+                </div>
+
+                <!-- Question -->
+                <div class="mb-8">
+                    <p id="questionText" class="text-xl font-semibold text-white mb-6"></p>
+                    
+                    <!-- Options -->
+                    <div id="optionsContainer" class="space-y-3"></div>
+                </div>
+
+                <!-- Loading indicator -->
+                <div id="loadingIndicator" class="text-center text-yellow-400 hidden">
+                    <p>Generating next question...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="resultsScreen" class="w-full max-w-2xl hidden">
+            <div class="bg-gray-800 rounded-lg shadow-2xl p-8 border border-yellow-600 text-center">
+                <h2 class="text-3xl font-bold text-yellow-400 mb-4">Quiz Complete!</h2>
+                <p class="text-gray-400 mb-8">Here's how you did:</p>
+                
+                <div class="mb-8">
+                    <p class="text-6xl font-bold text-yellow-400" id="finalScore">0</p>
+                    <p class="text-2xl text-gray-300">/5 Correct</p>
+                </div>
+
+                <div class="mb-8">
+                    <p id="resultMessage" class="text-xl text-gray-300"></p>
+                </div>
+
+                <button id="playAgainBtn" class="w-full bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-6 rounded-lg transition">
+                    Play Again
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
